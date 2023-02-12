@@ -1,11 +1,15 @@
 //import express
 import express from 'express'
-import jwt from 'jsonwebtoken'
+import path from 'path'
+import { fileURLToPath } from 'url'
 
 import postRouter from './routes/post/post.js'
 import machineRouter from './routes/machineStatus/index.js'
 
 const app = express()
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
@@ -20,7 +24,8 @@ app.listen(PORT, () => {
 })
 
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    console.log(__dirname)
+    res.sendFile(path.join(__dirname, '../src/site/index.html'))
     res.status(200)
 })
 
