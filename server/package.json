@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "tsc -w",
-    "start": "nodemon dist/index.js"
+    "start": "nodemon dist/index.js",
+    "clean": "rd /s /q node_modules"
   },
   "keywords": [],
   "author": "",
