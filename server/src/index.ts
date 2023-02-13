@@ -29,6 +29,11 @@ app.get('/', (req, res) => {
     res.status(200)
 })
 
+app.get('/', (req, res)=>{
+    res.send("Server is running")
+    res.status(200)
+})
+
 /* app.get('/api/post', (req, res) => {
     res.send('Hello World!')
     res.status(200)
